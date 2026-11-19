@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Honey Blush Beauty | Buccal facial sculpting, Currumbin Waters</title>
-<meta name="description" content="Buccal facial sculpting done by hand in a private studio in Currumbin Waters, Gold Coast. Book with Ami online.">
+<title>Honey Blush Beauty | Holistic facial sculpting, Currumbin Waters</title>
+<meta name="description" content="Facial sculpting massage, buccal massage and lymphatic techniques by Ami in Currumbin Waters, Gold Coast. Book online.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/hero-hands-jaw-client-lying-down.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/v5-hero-forehead.jpg" fetchpriority="high">
 <style>
 /* Tokens: copied exactly from brand/tokens.css */
 :root {
@@ -182,27 +182,33 @@ button:disabled { cursor: not-allowed; }
 .menu__book { margin-top: 32px; align-self: flex-start; }
 .menu__meta { margin-top: 24px; font-size: 15px; color: var(--hb-slate); }
 
+
+/* Wall colour sampled from the hero photo, so the text panel reads as part of the picture */
+:root { --hero-wall: #bdb2a9; }
+
 /* ============ HERO ============ */
 .hero {
   position: relative;
-  background: var(--hb-nude);
+  background: var(--hero-wall);
   color: var(--hb-charcoal);
   padding-top: var(--header-h);
 }
-.hero__media { position: relative; height: 46vh; height: 46svh; min-height: 260px; overflow: hidden; }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 40%; }
-/* The one gradient on the page: Nude dissolving into the photo. Mobile: photo fades down into the colour block. */
+.hero__media { position: relative; aspect-ratio: 4 / 3; max-height: 62svh; width: 100%; overflow: hidden; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 18% 50%; }
 .hero__media::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(230, 196, 172, 0) 60%, rgba(230, 196, 172, 1) 100%);
+  background: linear-gradient(180deg, rgba(189, 178, 169, 0) 62%, rgba(189, 178, 169, 1) 100%);
 }
-.hero__content { position: relative; padding-top: 8px; padding-bottom: 104px; }
-.hero__loc { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: var(--hb-charcoal); margin-bottom: 18px; }
-.hero__loc::before { content: ""; width: 32px; height: 1px; background: var(--hb-sage); }
-.hero h1 { font-size: clamp(2.3rem, 1.5rem + 3.4vw, 4.4rem); line-height: 1.07; letter-spacing: -0.01em; max-width: 13ch; }
-.hero__text { margin-top: 22px; font-size: 17px; max-width: 34em; }
-.hero__actions { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
-.hero__caption { margin-top: 36px; font-size: 13px; max-width: 34em; }
+.hero__content { position: relative; padding-top: 4px; padding-bottom: 64px; }
+.hero__eyebrow { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 18px; }
+.hero__eyebrow::before { content: ""; width: 32px; height: 1px; background: var(--hb-charcoal); }
+.hero h1 { font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.6rem); line-height: 1.08; letter-spacing: -0.01em; max-width: 15ch; }
+.hero__text { margin-top: 22px; font-size: 17px; max-width: 32em; }
+.hero__actions { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.btn--ghost { border-color: var(--hb-charcoal); color: var(--hb-charcoal); background: transparent; }
+.btn--ghost:hover { background: rgba(250, 248, 244, .35); text-decoration: underline; text-underline-offset: 3px; }
+.btn--ghost:active { transform: translateY(1px); }
+.hero__caption { margin-top: 32px; font-size: 13px; max-width: 34em; }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero__copy { animation: rise .7s cubic-bezier(.2, .7, .2, 1) both; }
@@ -210,155 +216,84 @@ button:disabled { cursor: not-allowed; }
 }
 
 @media (min-width: 860px) {
-  .hero {
-    --text-w: clamp(400px, 44vw, 560px);
-    /* left edge of the centred content, so the photo starts where the text column ends */
-    --edge: max(var(--gutter), calc((100vw - var(--max)) / 2));
-    --solid: calc(var(--edge) + var(--text-w) + 32px);
-    min-height: 85vh; min-height: 85svh;
-    display: flex; align-items: stretch;
-    padding-top: 0;
-  }
-  .hero__media { position: absolute; top: 0; bottom: 0; right: 0; left: var(--solid); height: auto; min-height: 0; }
-  .hero__media img { object-position: 42% 42%; }
-  .hero__media::after { background: linear-gradient(90deg, rgba(230, 196, 172, 1) 0, rgba(230, 196, 172, .55) 14%, rgba(230, 196, 172, 0) 32%); }
+  .hero { min-height: 88vh; min-height: min(88svh, 860px); display: flex; align-items: stretch; padding-top: 0; }
+  .hero__media { position: absolute; top: 0; bottom: 0; left: 0; width: 64%; aspect-ratio: auto; max-height: none; }
+  .hero__media img { object-position: 0% 45%; }
+  .hero__media::after { background: linear-gradient(90deg, rgba(189, 178, 169, 0) 62%, rgba(189, 178, 169, 1) 100%); }
   .hero__content {
-    width: 100%; display: flex; flex-direction: column; justify-content: center;
-    padding-top: calc(var(--header-h) + 48px); padding-bottom: 112px;
+    width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+    padding-top: calc(var(--header-h) + 40px); padding-bottom: 72px;
   }
-  .hero__copy { max-width: var(--text-w); }
+  .hero__copy { width: 40%; max-width: 540px; }
+  .hero h1 { max-width: 16ch; }
   .hero__text { font-size: 18px; }
 }
-@media (min-width: 1180px) {
-  /* keep the desktop nav row on solid Nude */
-  .hero { --solid: max(calc(var(--edge) + var(--text-w) + 32px), calc(var(--edge) + 650px)); }
-}
 
-/* ============ INFO STRIP ============ */
-.strip { position: relative; z-index: 2; margin-top: -64px; }
-.strip__grid {
-  display: grid; grid-template-columns: 1fr;
-  background: var(--hb-white);
-  border: 1px solid var(--hb-mist);
-  border-radius: var(--radius) var(--radius) var(--motif) var(--radius);
-}
-.strip__panel { display: flex; gap: 18px; align-items: flex-start; padding: 24px 22px; }
-.strip__panel + .strip__panel { border-top: 1px solid var(--hb-mist); }
-.seal { flex: none; width: 46px; height: 52px; }
-.strip__title { font-family: var(--font-heading); font-size: 21px; line-height: 1.3; }
-.strip__sub { font-size: 14px; color: var(--hb-slate); margin-top: 6px; }
-.strip__panel .link { margin-top: 2px; }
-@media (min-width: 760px) {
-  .strip__grid { grid-template-columns: 1fr 1fr; }
-  .strip__panel { padding: 30px 32px; }
-  .strip__panel + .strip__panel { border-top: 0; border-left: 1px solid var(--hb-mist); }
-}
+/* ============ SECTION HEADINGS ============ */
+.sec-title { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); max-width: 20ch; }
 
-/* ============ WHY BUCCAL ============ */
-.why { padding: 72px 0 80px; }
-.why__top { display: grid; gap: 36px; align-items: center; }
-.why__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; border-radius: 0 0 var(--motif) 0; }
-.why h2 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); max-width: 18ch; }
-.why__text { margin-top: 22px; max-width: 34em; }
-.points { margin-top: 56px; display: grid; gap: 28px; counter-reset: none; }
-.point__num { font-family: var(--font-heading); font-size: 30px; line-height: 1; color: var(--hb-slate); display: flex; align-items: center; gap: 14px; }
-.point__num::after { content: ""; flex: 1; max-width: 72px; height: 1px; background: var(--hb-sage); }
-.point p { margin-top: 14px; font-size: 16px; max-width: 30em; }
-@media (min-width: 640px) { .points { grid-template-columns: 1fr 1fr; gap: 36px 40px; } }
+/* ============ YOUR FACE TELLS A STORY ============ */
+.story { padding: 72px 0 80px; }
+.story__grid { display: grid; gap: 36px; align-items: center; }
+.story__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%; border-radius: 0 0 var(--motif) 0; }
+.story__text { margin-top: 22px; max-width: 32em; font-size: 18px; }
 @media (min-width: 860px) {
-  .why { padding: 112px 0 104px; }
-  .why__top { grid-template-columns: 5fr 6fr; gap: 72px; }
-  .why__photo { max-width: 500px; }
-}
-@media (min-width: 1100px) {
-  .points { grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 80px; }
+  .story { padding: 112px 0; }
+  .story__grid { grid-template-columns: 5fr 6fr; gap: 80px; }
+  .story__photo { max-width: 500px; }
 }
 
-/* ============ FACE ============ */
-.face { padding: 72px 0 88px; border-top: 1px solid var(--hb-mist); }
-.sec-head { display: grid; gap: 10px; margin-bottom: 40px; }
-.sec-head h2 { font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); }
-.sec-head p { color: var(--hb-slate); font-size: 17px; }
-.cards { display: grid; gap: 22px; grid-template-columns: 1fr; }
-.card {
-  display: flex; flex-direction: column;
-  background: var(--hb-white); border: 1px solid var(--hb-mist); border-radius: var(--radius);
+/* ============ WHO IS IT FOR ============ */
+.who { background: var(--hb-white); border-top: 1px solid var(--hb-mist); border-bottom: 1px solid var(--hb-mist); padding: 72px 0 80px; }
+.who__grid { display: grid; gap: 32px; }
+.who__lead { margin-top: 14px; font-size: 18px; color: var(--hb-slate); }
+.who__list { border-top: 1px solid var(--hb-mist); counter-reset: who; }
+.who__list li {
+  counter-increment: who;
+  display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: baseline;
+  padding: 18px 0; border-bottom: 1px solid var(--hb-mist); font-size: 18px; line-height: 1.5;
 }
-.card__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius) var(--radius) var(--motif) 0; }
-.card__media .caption { padding: 0 20px; }
-.card__body { display: flex; flex-direction: column; flex: 1; padding: 16px 20px 22px; }
-.card__tag { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
-.card h3 { font-size: 23px; line-height: 1.22; }
-.card__desc { margin-top: 10px; font-size: 16px; line-height: 1.55; }
-.card__meta { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--hb-mist); font-size: 15px; font-weight: 500; color: var(--hb-slate); margin-bottom: 18px; }
-.card .btn { margin-top: auto; align-self: flex-start; min-width: 120px; }
-/* Buccal leads: Nude surface, wider column, larger title */
-.card--lead { background: var(--hb-nude); border-color: var(--hb-nude); }
-.card--lead .caption, .card--lead .card__meta { color: var(--hb-charcoal); }
-.card--lead .card__meta { border-top-color: rgba(53, 54, 60, .25); }
-.card--lead h3 { font-size: 28px; }
-@media (min-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+.who__list li::before { content: counter(who, decimal-leading-zero); font-family: var(--font-heading); font-size: 20px; color: var(--hb-slate); }
 @media (min-width: 860px) {
-  .face { padding: 104px 0 112px; }
-  .sec-head { grid-template-columns: auto 1fr; align-items: baseline; gap: 32px; margin-bottom: 48px; }
-}
-@media (min-width: 1100px) {
-  .cards { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 20px; }
-  .card--lead h3 { font-size: 30px; }
-  .card--lead .card__media img { aspect-ratio: 4 / 3.4; }
-  .card:not(.card--lead) .card__media img { aspect-ratio: 4 / 3.4; }
+  .who { padding: 104px 0; }
+  .who__grid { grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+  .who__list li { padding: 22px 0; font-size: 19px; }
 }
 
-/* ============ BODY (quiet rows) ============ */
-.body-tx { background: var(--hb-white); padding: 64px 0 72px; border-top: 1px solid var(--hb-mist); }
-.body-tx .sec-head { margin-bottom: 28px; }
-.body-tx .sec-head h2 { font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem); }
-.body-tx .sec-head p { color: var(--hb-charcoal); font-size: 16px; }
-.rows { border-top: 1px solid var(--hb-mist); }
-.row { display: grid; gap: 4px 24px; padding: 18px 0; border-bottom: 1px solid var(--hb-mist); grid-template-columns: 1fr auto; }
-.row h3 { font-family: var(--font-body); font-weight: 500; font-size: 17px; line-height: 1.4; grid-column: 1 / -1; }
-.row__desc { font-size: 15px; line-height: 1.55; grid-column: 1 / -1; max-width: 46em; }
-.row__meta { font-size: 15px; align-self: center; }
-.row .link { font-size: 15px; justify-self: end; }
+/* ============ SIGNATURE TREATMENT ============ */
+.signature { background: var(--hb-nude); padding: 72px 0 80px; }
+.signature__grid { display: grid; gap: 36px; align-items: center; }
+.signature__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 0 0 var(--motif) 0; }
+.signature .label, .signature .caption { color: var(--hb-charcoal); }
+.signature .label::before { background: var(--hb-charcoal); }
+.signature__text { margin-top: 20px; max-width: 32em; }
+.signature__list { margin-top: 24px; border-top: 1px solid rgba(53, 54, 60, .25); max-width: 32em; }
+.signature__list li { padding: 12px 0; border-bottom: 1px solid rgba(53, 54, 60, .25); font-size: 16px; }
+.signature__actions { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
 @media (min-width: 860px) {
-  .body-tx { padding: 80px 0 88px; }
-  .row { grid-template-columns: 220px 1fr 130px 60px; align-items: center; padding: 14px 0; }
-  .row h3, .row__desc { grid-column: auto; }
+  .signature { padding: 104px 0; }
+  .signature__grid { grid-template-columns: 6fr 5fr; gap: 80px; }
+  .signature__photo { order: 2; max-width: 480px; justify-self: end; width: 100%; }
 }
 
 /* ============ ABOUT AMI ============ */
 .about { background: var(--hb-mist); padding: 72px 0 80px; }
-.about .label { color: var(--hb-charcoal); }
-.about .caption { color: var(--hb-charcoal); }
-.about__grid { display: grid; gap: 40px; }
-.about__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 28% 50%; border-radius: 0 0 var(--motif) 0; }
-.about h2 { font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); }
-.about__text { margin-top: 20px; max-width: 34em; }
-.about__soon { margin-top: 18px; font-size: 15px; font-weight: 500; }
-.stats { margin-top: 36px; display: grid; grid-template-columns: 1fr; gap: 0; }
-.stat { padding: 16px 0; border-top: 1px solid var(--hb-sage); display: flex; align-items: baseline; gap: 16px; }
-.stat__big { font-family: var(--font-heading); font-size: 30px; line-height: 1.1; flex: none; min-width: 3.4ch; }
-.stat__small { font-size: 15px; line-height: 1.4; }
-.stat--text .stat__big { font-size: 22px; }
-.about__small { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.about__small img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
-@media (min-width: 640px) {
-  .stats { grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .stat { display: block; padding-top: 18px; }
-  .stat__big, .stat__small { display: block; }
-  .stat__small { margin-top: 8px; }
-  .stat__big { font-size: 38px; }
-  .stat--text .stat__big { font-size: 26px; line-height: 1.25; }
-}
+.about .label, .about .caption { color: var(--hb-charcoal); }
+.about__grid { display: grid; gap: 40px; align-items: center; }
+.about__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 50%; border-radius: 0 0 var(--motif) 0; }
+.about__text p + p { margin-top: 16px; }
+.about__text { margin-top: 22px; max-width: 34em; }
+.about__quote { margin: 28px 0 0; padding-left: 20px; border-left: 1px solid var(--hb-charcoal); font-family: var(--font-heading); font-style: italic; font-size: 22px; line-height: 1.4; max-width: 26em; }
+.about__more { margin-top: 24px; font-size: 15px; font-weight: 500; }
 @media (min-width: 860px) {
   .about { padding: 104px 0; }
-  .about__grid { grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; }
-  .about__photo { position: sticky; top: calc(var(--header-h) + 24px); }
+  .about__grid { grid-template-columns: 5fr 6fr; gap: 72px; }
 }
 
-/* ============ KIND WORDS ============ */
+/* ============ REVIEWS ============ */
 .reviews { padding: 72px 0 80px; }
-.reviews .sec-head p { font-size: 15px; }
+.reviews__head { margin-bottom: 36px; }
+.reviews .sec-title { max-width: 24ch; }
 .quotes { display: grid; gap: 20px; }
 .quote { background: var(--hb-white); border: 1px solid var(--hb-mist); border-radius: var(--radius); padding: 26px 24px 24px; display: flex; flex-direction: column; }
 .stars { width: 96px; height: 16px; color: var(--hb-slate); }
@@ -368,7 +303,7 @@ button:disabled { cursor: not-allowed; }
 .quote figcaption span { color: var(--hb-slate); }
 .reviews__note { margin-top: 22px; font-size: 14px; color: var(--hb-slate); }
 @media (min-width: 760px) { .quotes { grid-template-columns: repeat(3, 1fr); } .quote blockquote { font-size: 19px; } }
-@media (min-width: 860px) { .reviews { padding: 104px 0 96px; } }
+@media (min-width: 860px) { .reviews { padding: 104px 0 96px; } .reviews__head { margin-bottom: 48px; } }
 
 /* ============ BOOKING BAND ============ */
 .book { background: var(--hb-nude); color: var(--hb-charcoal); padding: 72px 0; }
@@ -405,6 +340,8 @@ button:disabled { cursor: not-allowed; }
   .footer nav { justify-self: center; }
   .footer__legal .preview { flex-basis: auto; margin-left: auto; }
 }
+.note-soon { font-size: 15px; font-weight: 500; }
+
 </style>
 </head>
 <body>
@@ -416,15 +353,15 @@ button:disabled { cursor: not-allowed; }
     <a class="wordmark" href="#top">Honey Blush Beauty</a>
     <nav class="nav" aria-label="Main">
       <ul>
-        <li><a href="#face">Treatments</a></li>
-        <li><a href="#about">About</a></li>
-        <!-- TODO: Journal page, not built yet -->
-        <li><span class="soon">Journal<span class="soon-tag">(coming soon)</span></span></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#top" aria-current="page">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <!-- TODO: Treatments page (4 treatments), not built yet -->
+        <li><a href="#treatment">Treatments</a></li>
+        <!-- TODO: Gallery page, not built yet -->
+        <li><span class="soon">Gallery<span class="soon-tag">(coming soon)</span></span></li>
       </ul>
     </nav>
     <div class="header__actions">
-      <!-- TODO: replace with this treatment's deep link -->
       <a class="btn btn--blush" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener"><span class="full">Book now</span><span class="short">Book</span><span class="sr-only"> (opens in a new tab)</span></a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" id="menu-open">Menu</button>
     </div>
@@ -437,264 +374,143 @@ button:disabled { cursor: not-allowed; }
     <button class="menu__close" type="button" id="menu-close">Close</button>
   </div>
   <ul>
-    <li><a href="#face" data-close>Treatments</a></li>
-    <li><a href="#about" data-close>About</a></li>
-    <li><span class="soon">Journal<span class="soon-tag">(coming soon)</span></span></li>
-    <li><a href="#contact" data-close>Contact</a></li>
+    <li><a href="#top" data-close>Home</a></li>
+    <li><a href="#about" data-close>About me</a></li>
+    <li><a href="#treatment" data-close>Treatments</a></li>
+    <li><span class="soon">Gallery<span class="soon-tag">(coming soon)</span></span></li>
   </ul>
-  <!-- TODO: replace with this treatment's deep link -->
   <a class="btn btn--blush menu__book" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book now<span class="sr-only"> (opens in a new tab)</span></a>
   <p class="menu__meta">Currumbin Waters QLD 4223 · <a href="tel:+61410191336">0410 191 336</a></p>
 </div>
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- HERO (text from Ami's homepage doc) -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__media">
-      <img src="images/hero-hands-jaw-client-lying-down.jpg" width="1600" height="1068"
-           alt="A therapist's hands resting on a woman's jaw and the side of her head as she lies on a treatment table with her eyes closed."
+      <img src="images/v5-hero-forehead.jpg" width="1456" height="1088"
+           alt="A therapist rests one hand on a woman's forehead and lifts the other above it as she lies on a treatment bed with her eyes closed."
            fetchpriority="high" loading="eager" decoding="async">
     </div>
     <div class="wrap hero__content">
       <div class="hero__copy">
-        <p class="hero__loc">Currumbin Waters, Gold Coast</p>
-        <h1 id="hero-title">Facial sculpting by <em>hand</em>, from the inside out.</h1>
-        <p class="hero__text">Ami works the muscles of your cheeks and jaw from inside the mouth and from outside, releasing held tension and lifting the contours of your face. A non-invasive treatment, done entirely by hand in a private studio a few minutes from the beach.</p>
+        <p class="hero__eyebrow">Holistic facial transformation</p>
+        <h1 id="hero-title">Beautiful skin begins with truly understanding your <em>face</em>.</h1>
+        <p class="hero__text">Helping women look refreshed, feel confident and age naturally through advanced facial sculpting massage, buccal massage and lymphatic techniques.</p>
         <div class="hero__actions">
-          <!-- TODO: replace with this treatment's deep link -->
-          <a class="btn btn--blush btn--edge" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book buccal sculpting<span class="sr-only"> (opens in a new tab)</span></a>
-          <a class="link" href="#face">See all treatments</a>
+          <a class="btn btn--blush btn--edge" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book now<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn btn--ghost" href="#treatment">View treatments</a>
         </div>
-        <p class="hero__caption">Final photo: Ami's gloved hands on a client's cheek, soft side light.</p>
       </div>
     </div>
   </section>
 
-  <!-- INFO STRIP -->
-  <div class="wrap strip">
-    <div class="strip__grid">
-      <div class="strip__panel">
-        <svg class="seal" viewBox="0 0 46 52" fill="none" stroke="#8e9b8f" stroke-width="1.3" aria-hidden="true">
-          <circle cx="23" cy="20" r="17"/>
-          <circle cx="23" cy="20" r="12.5"/>
-          <path d="M14.5 34.5 11 49l6-3.2 4 4.6 2-12.4"/>
-          <path d="M31.5 34.5 35 49l-6-3.2-4 4.6-2-12.4"/>
-        </svg>
-        <div>
-          <!-- SAMPLE: confirm with Ami -->
-          <p class="strip__title">Certified buccal facial sculpting practitioner</p>
-          <p class="strip__sub">Sample credential for the design preview.</p>
-        </div>
-      </div>
-      <div class="strip__panel">
-        <div>
-          <!-- SAMPLE: confirm with Ami -->
-          <p class="strip__title">First visit: $20 off Buccal Facial Sculpting.</p>
-          <!-- TODO: replace with this treatment's deep link -->
-          <a class="link" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book your first visit<span class="sr-only"> (opens in a new tab)</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WHY BUCCAL -->
-  <section class="why" aria-labelledby="why-title">
-    <div class="wrap">
-      <div class="why__top">
-        <figure class="why__photo">
-          <img src="images/why-hands-jaw-neck-soft-light.jpg" width="1200" height="1800" loading="lazy" decoding="async"
-               alt="Close-up of a therapist's hands on a woman's jaw and neck as she lies back with her eyes closed, in soft daylight.">
-          <figcaption class="caption">Final photo: close-up of hands working along the jawline.</figcaption>
-        </figure>
-        <div>
-          <p class="label">Why buccal</p>
-          <h2 id="why-title">Most clinics on the Gold Coast lift with machines. Ami lifts with her <em>hands</em>.</h2>
-          <p class="why__text">Buccal facial sculpting is an intra-oral facial massage. Wearing gloves, Ami massages the muscles of the cheeks and jaw from inside the mouth, then works the same muscles from outside. As the tension lets go, the face sits higher and the jawline looks more defined, without needles.</p>
-        </div>
-      </div>
-      <ol class="points">
-        <li class="point"><span class="point__num" aria-hidden="true">01</span><p>Done by hand, with every movement adjusted to your face.</p></li>
-        <li class="point"><span class="point__num" aria-hidden="true">02</span><p>Worked from inside the mouth and outside, reaching muscles a standard facial cannot.</p></li>
-        <li class="point"><span class="point__num" aria-hidden="true">03</span><p>Ami trained with a pioneering buccal practitioner in Sydney.</p></li>
-        <li class="point"><span class="point__num" aria-hidden="true">04</span><p>Manual buccal sculpting is still rare on the Gold Coast.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- FACE -->
-  <section class="face" id="face" aria-labelledby="face-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="face-title">Face</h2>
-        <p>Face treatments, led by buccal sculpting.</p>
-      </div>
-      <div class="cards">
-
-        <article class="card card--lead">
-          <figure class="card__media">
-            <img src="images/card-buccal-hands-on-face.jpg" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="Close-up of two hands pressing gently along a person's cheek and jaw in warm, low light.">
-            <figcaption class="caption">Final photo: buccal treatment, side view.</figcaption>
-          </figure>
-          <div class="card__body">
-            <p class="card__tag">Signature treatment</p>
-            <h3>Buccal Facial Sculpting</h3>
-            <p class="card__desc">Intra-oral and external massage that releases jaw tension and lifts the cheeks and jawline.</p>
-            <!-- SAMPLE: confirm with Ami -->
-            <p class="card__meta">75 min · $195</p>
-            <!-- TODO: replace with this treatment's deep link -->
-            <a class="btn btn--blush btn--edge" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book Buccal Facial Sculpting (opens in a new tab)">Book</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <figure class="card__media">
-            <img src="images/card-osteo-client-lying-down.jpg" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="A therapist in a mask works on the head of a client lying under a white towel on a treatment bed.">
-            <figcaption class="caption">Final photo: hands on the neck and jaw, client lying down.</figcaption>
-          </figure>
-          <div class="card__body">
-            <h3>Osteo Facial Sculpting Massage</h3>
-            <!-- SAMPLE: confirm with Ami -->
-            <p class="card__desc">A deep hands-on massage of the face and neck muscles, worked from outside only.</p>
-            <p class="card__meta">60 min · $160</p>
-            <!-- TODO: replace with this treatment's deep link -->
-            <a class="btn btn--blush" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book Osteo Facial Sculpting Massage (opens in a new tab)">Book</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <figure class="card__media">
-            <img src="images/card-illumination-serum.jpg" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="A dropper releases serum onto a woman's cheek while a hand smooths it into the skin.">
-            <figcaption class="caption">Final photo: serum being pressed into the skin.</figcaption>
-          </figure>
-          <div class="card__body">
-            <h3>Intrinsic Illumination Infusion</h3>
-            <!-- SAMPLE: confirm with Ami -->
-            <p class="card__desc">A hydrating facial: cleanse, gentle exfoliation, then serums massaged in for brighter-looking skin.</p>
-            <p class="card__meta">60 min · $150</p>
-            <!-- TODO: replace with this treatment's deep link -->
-            <a class="btn btn--blush" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book Intrinsic Illumination Infusion (opens in a new tab)">Book</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <figure class="card__media">
-            <img src="images/card-agedefy-hands-on-cheeks.jpg" width="1600" height="2400" loading="lazy" decoding="async"
-                 alt="A woman lies with her hair wrapped in a white towel while a therapist presses two soft sponges to her cheeks.">
-            <figcaption class="caption">Final photo: client resting under linen after the facial.</figcaption>
-          </figure>
-          <div class="card__body">
-            <h3>Age Defy Rejuvenation Facial</h3>
-            <!-- SAMPLE: confirm with Ami -->
-            <p class="card__desc">A longer facial that pairs sculpting massage with a skin treatment, so skin feels firmer and well hydrated.</p>
-            <p class="card__meta">75 min · $180</p>
-            <!-- TODO: replace with this treatment's deep link -->
-            <a class="btn btn--blush" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book Age Defy Rejuvenation Facial (opens in a new tab)">Book</a>
-          </div>
-        </article>
-
+  <!-- YOUR FACE TELLS A STORY -->
+  <section class="story" aria-labelledby="story-title">
+    <div class="wrap story__grid">
+      <figure class="story__photo">
+        <img src="images/v5-story-hands-cheeks.jpg" width="1199" height="1312" loading="lazy" decoding="async"
+             alt="A therapist's hands sculpt along a client's cheekbones and jaw as she lies on a treatment bed, a candle and plant behind.">
+      </figure>
+      <div>
+        <p class="label">Your face tells a story</p>
+        <h2 class="sec-title" id="story-title">Stress, tension and ageing can change how your face looks and feels.</h2>
+        <p class="story__text">I look beyond the surface, working with facial muscles, connective tissue and lymphatic flow to support natural facial definition, release tension and restore radiance.</p>
       </div>
     </div>
   </section>
 
-  <!-- BODY -->
-  <section class="body-tx" aria-labelledby="body-title">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="body-title">Body</h2>
-        <p>Body sculpting treatments, still available alongside the face work.</p>
+  <!-- WHO IS IT FOR -->
+  <section class="who" aria-labelledby="who-title">
+    <div class="wrap who__grid">
+      <div>
+        <p class="label">Who is it for?</p>
+        <h2 class="sec-title" id="who-title">For women who&hellip;</h2>
       </div>
-      <!-- SAMPLE: confirm with Ami (descriptions, durations, prices) -->
-      <ul class="rows">
-        <li class="row">
-          <h3>Fat Cavitation</h3>
-          <p class="row__desc">Low-frequency ultrasound on one area, such as the abdomen or thighs, to help reduce stubborn fat.</p>
-          <p class="row__meta">30 min · $99</p>
-          <!-- TODO: replace with this treatment's deep link -->
-          <a class="link" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book Fat Cavitation (opens in a new tab)">Book</a>
-        </li>
-        <li class="row">
-          <h3>EMS Body Sculpting</h3>
-          <p class="row__desc">Electrical muscle stimulation makes the muscles contract repeatedly to tone one area.</p>
-          <p class="row__meta">30 min · $120</p>
-          <!-- TODO: replace with this treatment's deep link -->
-          <a class="link" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book EMS Body Sculpting (opens in a new tab)">Book</a>
-        </li>
-        <li class="row">
-          <h3>RF Skin Tightening</h3>
-          <p class="row__desc">Radiofrequency gently warms the deeper layers of the skin to help it look firmer.</p>
-          <p class="row__meta">45 min · $130</p>
-          <!-- TODO: replace with this treatment's deep link -->
-          <a class="link" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener" aria-label="Book RF Skin Tightening (opens in a new tab)">Book</a>
-        </li>
+      <ul class="who__list">
+        <li>Notice facial puffiness, tiredness or loss of definition.</li>
+        <li>Want a more sculpted, refreshed appearance.</li>
+        <li>Carry tension around their jaw and face.</li>
+        <li>Want to age naturally without invasive treatments.</li>
+        <li>Believe beauty is about feeling good as well as looking good.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ABOUT AMI -->
-  <section class="about" id="about" aria-labelledby="about-title">
-    <div class="wrap about__grid">
-      <figure class="about__photo">
-        <img src="images/about-hands-cradling-head.jpg" width="1600" height="1068" loading="lazy" decoding="async"
-             alt="A therapist's hands cradle the head of a client lying on a treatment table under a green towel, fairy lights in the background.">
-        <figcaption class="caption">Final photo: Ami at work in the studio.</figcaption>
+  <!-- SIGNATURE TREATMENT: buccal (agreed with Ami). Text below is SAMPLE until her treatment copy arrives. -->
+  <section class="signature" id="treatment" aria-labelledby="signature-title">
+    <div class="wrap signature__grid">
+      <figure class="signature__photo">
+        <img src="images/v5-buccal-gloved.jpg" width="900" height="1600" loading="lazy" decoding="async"
+             alt="Gloved hands perform a buccal massage, working a client's cheek from inside the mouth and outside.">
       </figure>
       <div>
-        <p class="label">About Ami</p>
-        <h2 id="about-title">Meet Ami</h2>
-        <p class="about__text">Ami built Honey Blush Beauty on her own, as a private studio at her home in Currumbin Waters, a few minutes from the beach. She sees every client herself, so each treatment is shaped around your face and what you want from it. She trained in buccal sculpting with a pioneering practitioner in Sydney and brought the technique home to the Gold Coast, where few studios offer it by hand.</p>
-        <!-- TODO: About page, not built yet -->
-        <p class="about__soon">Meet Ami (full page coming soon)</p>
+        <p class="label">Signature treatment</p>
+        <h2 class="sec-title" id="signature-title">Buccal massage</h2>
         <!-- SAMPLE: confirm with Ami -->
-        <ul class="stats">
-          <li class="stat"><span class="stat__big">5+</span> <span class="stat__small">years of hands-on facial work</span></li>
-          <li class="stat"><span class="stat__big">1,000+</span> <span class="stat__small">treatments done by hand</span></li>
-          <li class="stat stat--text"><span class="stat__big">Trained in Sydney</span></li>
+        <p class="signature__text">With gloved hands, Ami works the cheek and jaw muscles from inside the mouth as well as outside, reaching tension a standard facial can't. It is done entirely by hand and shaped around your face.</p>
+        <ul class="signature__list">
+          <li>Releases held tension in the jaw and cheeks</li>
+          <li>Supports natural-looking contours and definition</li>
+          <li>Non-invasive, with no needles</li>
         </ul>
-        <div class="about__small">
-          <figure>
-            <img src="images/about-treatment-table.jpg" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="A made-up treatment bed with a rolled white towel, a candle and a small vase on a wooden tray.">
-            <figcaption class="caption">Final photo: the studio room.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/about-towels-skincare.jpg" width="1600" height="1067" loading="lazy" decoding="async"
-                 alt="Folded white towels beside plain white skincare jars and bottles.">
-            <figcaption class="caption">Final photo: linen and products.</figcaption>
-          </figure>
+        <div class="signature__actions">
+          <!-- TODO: replace with the buccal treatment's deep link -->
+          <a class="btn btn--blush btn--edge" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book buccal massage<span class="sr-only"> (opens in a new tab)</span></a>
+          <!-- TODO: Treatments page with all 4 treatments, not built yet -->
+          <span class="note-soon">See all treatments (page coming soon)</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KIND WORDS -->
+  <!-- A LITTLE ABOUT AMI (text from Ami's homepage doc) -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about__grid">
+      <figure class="about__photo">
+        <img src="images/v5-ami-studio.jpg" width="1199" height="1312" loading="lazy" decoding="async"
+             alt="A therapist in a white T-shirt sits beside a treatment bed, giving a facial massage to a client in a calm studio.">
+      </figure>
+      <div>
+        <p class="label">A little about Ami</p>
+        <h2 class="sec-title" id="about-title">Hello, I'm Ami.</h2>
+        <div class="about__text">
+          <p>My passion for facial sculpting began with my own experience of ageing. I wanted to understand why our faces change and how we can support them naturally.</p>
+          <p>With a background in Cosmetic Science and advanced facial sculpting training, I combine knowledge with specialised hands-on techniques to help women reconnect with their natural beauty.</p>
+        </div>
+        <p class="about__quote">I believe beauty goes beyond the surface. It's about how you look, how you feel and how you care for yourself.</p>
+        <!-- TODO: link to the About me page once built -->
+        <p class="about__more">Read Ami's full story (About me page coming soon)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE REVIEWS -->
   <section class="reviews" aria-labelledby="reviews-title">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 id="reviews-title">Kind words</h2>
+      <div class="reviews__head">
+        <p class="label">Google reviews</p>
+        <h2 class="sec-title" id="reviews-title">Real results, in their words</h2>
       </div>
-      <!-- SAMPLE: confirm with Ami (reviews are placeholders for the preview) -->
+      <!-- SAMPLE: Ami will pick her best Google reviews (she has about 30) -->
       <div class="quotes">
         <figure class="quote">
           <svg class="stars" viewBox="0 0 96 16" fill="currentColor" role="img" aria-label="5 out of 5 stars"><use href="#star" width="16" height="16"/><use href="#star" x="20" width="16" height="16"/><use href="#star" x="40" width="16" height="16"/><use href="#star" x="60" width="16" height="16"/><use href="#star" x="80" width="16" height="16"/></svg>
           <blockquote><p>“My jaw had been tight for years from clenching. After one buccal session it finally let go, and my face looked lighter in the mirror.”</p></blockquote>
-          <figcaption><b>Sarah</b>, <span>Palm Beach</span></figcaption>
+          <figcaption><b>Sarah</b>, <span>Google review</span></figcaption>
         </figure>
         <figure class="quote">
           <svg class="stars" viewBox="0 0 96 16" fill="currentColor" role="img" aria-label="5 out of 5 stars"><use href="#star" width="16" height="16"/><use href="#star" x="20" width="16" height="16"/><use href="#star" x="40" width="16" height="16"/><use href="#star" x="60" width="16" height="16"/><use href="#star" x="80" width="16" height="16"/></svg>
           <blockquote><p>“Ami explained every step before she started, so I felt relaxed the whole time. My cheekbones looked more lifted the next morning.”</p></blockquote>
-          <figcaption><b>Jess</b>, <span>Burleigh Heads</span></figcaption>
+          <figcaption><b>Jess</b>, <span>Google review</span></figcaption>
         </figure>
         <figure class="quote">
           <svg class="stars" viewBox="0 0 96 16" fill="currentColor" role="img" aria-label="5 out of 5 stars"><use href="#star" width="16" height="16"/><use href="#star" x="20" width="16" height="16"/><use href="#star" x="40" width="16" height="16"/><use href="#star" x="60" width="16" height="16"/><use href="#star" x="80" width="16" height="16"/></svg>
           <blockquote><p>“A quiet studio, no rush, and someone who actually listens. I book in every month now.”</p></blockquote>
-          <figcaption><b>Mel</b>, <span>Tugun</span></figcaption>
+          <figcaption><b>Mel</b>, <span>Google review</span></figcaption>
         </figure>
       </div>
-      <p class="reviews__note">Sample reviews for the design preview.</p>
+      <p class="reviews__note">Sample reviews for the design preview. These will be replaced with Ami's chosen Google reviews.</p>
     </div>
   </section>
 
@@ -705,7 +521,6 @@ button:disabled { cursor: not-allowed; }
         <h2 id="book-title">Book a time that suits you.</h2>
         <p class="book__text">Choose your treatment and time online. Have a question first? Send Ami a message.</p>
         <div class="book__actions">
-          <!-- TODO: replace with this treatment's deep link -->
           <a class="btn btn--blush btn--edge" href="https://book.squareup.com/appointments/phnsexzwxhyohn/location/L5SD0TNCDJD6A/services" target="_blank" rel="noopener">Book your visit<span class="sr-only"> (opens in a new tab)</span></a>
           <a class="link" href="https://wa.me/61410191336" target="_blank" rel="noopener">Message Ami on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a>
         </div>
@@ -727,8 +542,9 @@ button:disabled { cursor: not-allowed; }
       <a class="wordmark" href="#top">Honey Blush Beauty</a>
       <nav aria-label="Footer">
         <ul>
-          <li><a href="#face">Treatments</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#treatment">Treatments</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -743,7 +559,7 @@ button:disabled { cursor: not-allowed; }
       <span>Cancellation Policy (coming soon)</span>
       <span>Privacy Policy (coming soon)</span>
       <span>© 2026 Honey Blush Beauty</span>
-      <span class="preview">Design preview. Text and photos are samples.</span>
+      <span class="preview">Design preview. Reviews, hours and the buccal description are samples.</span>
     </div>
   </div>
 </footer>
